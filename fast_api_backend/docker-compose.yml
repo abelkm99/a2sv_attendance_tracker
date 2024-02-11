@@ -4,8 +4,8 @@ services:
   backend:
     container_name: slack-bot-backend
     environment:
-      - ENVIRONMENT: ${ENVIRONMENT}
-      - TEST_DATABASE_URI: ${TEST_DATABASE_URI}
+      - ENVIRONMENT: "${ENVIRONMENT}"
+      - TEST_DATABASE_URI: "${TEST_DATABASE_URI}"
     build:
       context: .
       dockerfile: Dockerfile.dev
