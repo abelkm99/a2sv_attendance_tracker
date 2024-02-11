@@ -10,4 +10,7 @@ jobs:
         run: docker-compose up -d
       - name: Run tests
         working-directory: fast_api_backend
+        env:
+          ENVIRONMENT: ${{ vars.ENVIRONMENT }}
+          TEST_DATABASE_URI: ${{ vars.TEST_DATABASE_URI }}
         run: docker-compose exec -T backend pytest -p no:warnings -s
