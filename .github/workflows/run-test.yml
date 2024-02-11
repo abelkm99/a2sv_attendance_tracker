@@ -13,12 +13,12 @@ jobs:
 
       - name: check secret
         shell: bash
-        run: echo "the environment is $ENVIRONMENT"
+        run: echo "the environment is $TEST_DATABASE_URI"
 
-      # - name: Build the stack
-      #   working-directory: fast_api_backend
-      #   run: docker-compose up -d
+      - name: Build the stack
+        working-directory: fast_api_backend
+        run: docker-compose up -d
 
-      # - name: Run tests
-      #   working-directory: fast_api_backend
-      #   run: docker-compose exec -T backend pytest -p no:warnings -s
+      - name: Run tests
+        working-directory: fast_api_backend
+        run: docker-compose exec -T backend pytest -p no:warnings -s
