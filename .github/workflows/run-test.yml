@@ -5,8 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: testing
     env:
-      ENVIRONMENT: postgresql+asyncpg://root:123456789@host.docker.internal:5432/slack-bot-test
-      TEST_DATABASE_URI: ${{ vars.TEST_DATABASE_URI }}
+      ENVIRONMENT: ${{ vars.ENVIRONMENT }}
+      TEST_DATABASE_URI: postgresql+asyncpg://root:123456789@db:5432/slack-bot-test
       OPENAI_API_URL: ${{ secrets.OPENAI_API_URL }}
       APP_TOKEN: ${{ vars.APP_TOKEN }}
       Telegram_BOT_TOKEN: ${{ vars.Telegram_BOT_TOKEN }}
