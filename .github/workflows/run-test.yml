@@ -13,7 +13,7 @@ jobs:
 
       - name: check secret
         shell: bash
-        run: echo "the environment is ENVIRONMENT"
+        run: echo "the environment is $ENVIRONMENT"
 
       # - name: Build the stack
       #   working-directory: fast_api_backend
