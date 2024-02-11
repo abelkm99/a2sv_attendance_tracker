@@ -10,7 +10,7 @@ jobs:
         env:
           ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
           TEST_DATABASE_URI: ${{ secrets.TEST_DATABASE_URI }}
-        run: example-command "$SUPER_SECRET"
+        run: echo $ENVIRONMENT
       - name: Build the stack
         working-directory: fast_api_backend
         run: docker-compose up -d
