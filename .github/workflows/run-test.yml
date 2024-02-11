@@ -10,4 +10,4 @@ jobs:
         run: docker-compose up -d
       - name: Run tests
         working-directory: fast_api_backend
-        run: docker-compose exec backend pytest -p no:warnings -s
+        run: docker-compose exec -T backend pytest -p no:warnings -s
