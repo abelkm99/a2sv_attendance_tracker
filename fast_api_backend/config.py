@@ -90,7 +90,7 @@ class DevConfig(BaseConfig):
 class TestConfig(BaseConfig):
     DATABASE_URL: str = config(
         "TEST_DATABASE_URI",
-        default="",
+        default="postgresql+asyncpg://root:123456789@host.docker.internal:5457/slack-bot",
     )
 
 
