@@ -5,12 +5,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: check secret
+        shell: bash
+        env:
+          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
+          TEST_DATABASE_URI: ${{ secrets.TEST_DATABASE_URI }}
+        run: example-command "$SUPER_SECRET"
       - name: Build the stack
         working-directory: fast_api_backend
         run: docker-compose up -d
       - name: Run tests
         working-directory: fast_api_backend
-        env:
-          ENVIRONMENT: testing
-          TEST_DATABASE_URI: postgresql+asyncpg://root:123456789@host.docker.internal:5457/slack-bot-test
+        env: # Or as an environment variable
+          ENVIRONMENT: ${{ secrets.ENVIRONMENT }}
+          TEST_DATABASE_URI: ${{ secrets.TEST_DATABASE_URI }}
         run: docker-compose exec -T backend pytest -p no:warnings -s
