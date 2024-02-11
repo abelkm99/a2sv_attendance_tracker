@@ -3,6 +3,9 @@ version: "3.8"
 services:
   backend:
     container_name: slack-bot-backend
+    environment:
+      - ENVIRONMENT: ${ENVIRONMENT}
+      - TEST_DATABASE_URI: ${TEST_DATABASE_URI}
     build:
       context: .
       dockerfile: Dockerfile.dev
