@@ -26,9 +26,6 @@ jobs:
 
       # add 10 second waiting time
 
-      - name: wait for 10 seconds
-        run: sleep 10
-
       - name: check docker-compose running
         working-directory: fast_api_backend
         run: docker-compose ps
@@ -41,11 +38,6 @@ jobs:
       - name: create a test db
         working-directory: fast_api_backend
         run: docker-compose exec -T db createdb -U root slack-bot-test
-
-      # print the database logs2
-      - name: check database logs2
-        working-directory: fast_api_backend
-        run: docker-compose logs db
 
       - name: Run tests
         working-directory: fast_api_backend
