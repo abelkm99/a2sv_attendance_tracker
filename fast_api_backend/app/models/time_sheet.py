@@ -28,7 +28,7 @@ class TimeSheet(Base):
     )
     elapsed_time: Mapped[int] = mapped_column(Integer, nullable=True)
     location: Mapped[str] = mapped_column(
-        String(100), nullable=True, server_default=text("In Person")
+        String(100), nullable=True, default=text("In Person")
     )
 
     project: Mapped["Project"] = relationship("Project", back_populates="timesheets")
