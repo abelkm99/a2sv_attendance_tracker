@@ -24,6 +24,9 @@ jobs:
         working-directory: fast_api_backend
         run: docker-compose up -d
 
+      - name: check docker-compose running
+        run: docker-compose ps
+
       - name: create a test db
         working-directory: fast_api_backend
         run: docker-compose exec -T db createdb -U root slack-bot-test
