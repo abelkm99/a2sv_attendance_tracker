@@ -25,6 +25,7 @@ jobs:
         run: docker-compose up -d
 
       - name: check docker-compose running
+        working-directory: fast_api_backend
         run: docker-compose ps
 
       - name: create a test db
