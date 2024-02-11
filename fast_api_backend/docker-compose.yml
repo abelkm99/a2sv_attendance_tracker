@@ -4,8 +4,8 @@ services:
   backend:
     container_name: slack-bot-backend
     environment:
-      - ENVIRONMENT: "${ENVIRONMENT}"
-      - TEST_DATABASE_URI: "${TEST_DATABASE_URI}"
+      - ENVIRONMENT=testing
+      - DATABASE_URL=postgresql+asyncpg://root:123456789@host.docker.internal:5457/slack-bot
     build:
       context: .
       dockerfile: Dockerfile.dev
