@@ -97,5 +97,5 @@ class TestConfig(BaseConfig):
 MySettings = BaseConfig().get_env()
 
 print("-" * 30)
-print("starting", MySettings.ENVIRONMENT, "config")
+print("starting", MySettings.ENVIRONMENT, "config", MySettings.DATABASE_URL)
 print("-" * 30)
