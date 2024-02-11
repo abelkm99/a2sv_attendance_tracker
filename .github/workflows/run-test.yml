@@ -8,3 +8,6 @@ jobs:
       - name: Build the stack
         working-directory: fast_api_backend
         run: docker-compose up -d
+      - name: Run tests
+        working-directory: fast_api_backend
+        run: docker-compose exec backend pytest -p no:warnings -s
