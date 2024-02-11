@@ -4,8 +4,13 @@ services:
   backend:
     container_name: slack-bot-backend
     environment:
-      - ENVIRONMENT=testing
-      - DATABASE_URL=postgresql+asyncpg://root:123456789@host.docker.internal:5457/slack-bot
+      - ENVIRONMENT=${ENVIRONMENT}
+      - TEST_DATABASE_URI=${TEST_DATABASE_URI}
+      - OPENAI_API_URL=${OPENAI_API_URL}
+      - APP_TOKEN=${APP_TOKEN}
+      - Telegram_BOT_TOKEN=${Telegram_BOT_TOKEN}
+      - SLACK_BOT_TOKEN=${SLACK_BOT_TOKEN}
+      - SLACK_SIGNING_SECRET=${SLACK_SIGNING_SECRET}
     build:
       context: .
       dockerfile: Dockerfile.dev

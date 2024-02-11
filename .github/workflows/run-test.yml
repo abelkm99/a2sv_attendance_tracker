@@ -7,6 +7,11 @@ jobs:
     env:
       ENVIRONMENT: ${{ vars.ENVIRONMENT }}
       TEST_DATABASE_URI: ${{ vars.TEST_DATABASE_URI }}
+      OPENAI_API_URL: ${{ secrets.OPENAI_API_URL }}
+      APP_TOKEN: ${{ vars.APP_TOKEN }}
+      Telegram_BOT_TOKEN: ${{ vars.Telegram_BOT_TOKEN }}
+      SLACK_BOT_TOKEN: ${{ vars.SLACK_BOT_TOKEN }}
+      SLACK_SIGNING_SECRET: ${{ vars.SLACK_SIGNING_SECRET }}
 
     steps:
       - uses: actions/checkout@v2
