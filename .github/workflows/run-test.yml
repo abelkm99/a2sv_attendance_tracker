@@ -47,6 +47,6 @@ jobs:
         working-directory: fast_api_backend
         run: docker-compose logs db
 
-      # - name: Run tests
-      #   working-directory: fast_api_backend
-      #   run: docker-compose exec -T backend pytest -p no:warnings -s
+      - name: Run tests
+        working-directory: fast_api_backend
+        run: docker-compose exec -T backend pytest -p no:warnings -s
