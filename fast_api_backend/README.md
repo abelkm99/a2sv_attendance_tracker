@@ -21,3 +21,5 @@ docker-compose exec db createdb -U root slack-bot-test
 To Run the Tests
 `
 docker-compose exec backend pytest -p no:warnings -s
+
+MINOR CHANGE
